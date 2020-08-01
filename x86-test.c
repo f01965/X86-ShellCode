@@ -54,7 +54,7 @@ void __declspec(naked) findGetProAddrByPeb(DWORD flag)
 	next_mod:
 		mov esi, [eax + 0x8];  Poniter to DllBase
 		mov edi, [eax + 0x20]; Poniter to BaseDllName
-		mov eax, [eax];		   Poniter to next module InMemoryOrderLinks
+		mov eax, [eax];		   Poniter to next module InInitializationOrderLinks
 		xor ebx, ebx;
 	add_kerstr:
 		cmp dword ptr[edi + 0xc], 0x00320033; add module name
